@@ -11,7 +11,22 @@ from bs4 import BeautifulSoup
 from newspaper import Article
 import time
 import datetime
-
+# Initialize NewsAPI client
+newsapi = NewsApiClient(api_key='b309cd0d-0724-42fd-9368-56971ec1784d')
+# List of reliable news sources
+reliable_sources = [
+    'bloomberg', 'marketwatch', 'seeking-alpha', 'reuters', 'investors-business-daily'
+]
+# Fetch market-related news
+def get_market_news():
+    all_articles = newsapi.get_everything(
+        q="stocks OR market OR earnings OR merger OR breakout",  # Keywords to track
+        sources="bloomberg,marketwatch,seeking-alpha",  # Limit to financial sources
+        language="en",
+        sort_by="publishedAt",  # Sort by latest
+        page_size=5
+    )
+    return all_articles['articles']
 STOCK = "SPY"
 LOOKBACK_DAYS = 60
 DISCORD_WEBHOOK = "https://discord.gg/S5dm6nZU"
