@@ -11,10 +11,3 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy app files
 COPY . .
 
-# Run the bot
-CMD ["python", "main.py"]
-# docker-compose.yml
-services:
-  tradingbot:
-    build: .
-    command: ["python", "my_bot.py", "start"]
