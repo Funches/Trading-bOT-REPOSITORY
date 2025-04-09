@@ -14,7 +14,7 @@ import datetime
 
 STOCK = "SPY"
 LOOKBACK_DAYS = 60
-DISCORD_WEBHOOK = "YOUR_DISCORD_WEBHOOK"
+DISCORD_WEBHOOK = "https://discord.gg/S5dm6nZU"
 
 def fetch_data():
     df = yf.download(STOCK, period=f"{LOOKBACK_DAYS}d", interval="15m")
@@ -65,7 +65,7 @@ def make_prediction(model, scaler, df):
     return model.predict(scaled)[0]
 
 def send_alert(message):
-    if DISCORD_WEBHOOK != "YOUR_DISCORD_WEBHOOK":
+    if DISCORD_WEBHOOK != "https://discord.gg/S5dm6nZU":
         requests.post(DISCORD_WEBHOOK, json={"content": message})
 
 def main():
