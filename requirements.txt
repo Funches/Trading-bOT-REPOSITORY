@@ -6,3 +6,12 @@ requests
 beautifulsoup4
 lxml
 newspaper3k
+yfinance
+pandas
+ta
+scikit-learn
+requests
+beautifulsoup4
+lxml
+newspaper3k
+polygon-api-client
