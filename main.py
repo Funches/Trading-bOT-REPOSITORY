@@ -121,7 +121,7 @@ import time
 import datetime
 
 # Polygon API Key
-API_KEY = 'your_polygon_api_key'
+API_KEY = 'CJqpwB7cfkSNZppRiFIptFtZNM_Pj55F'
 client = RESTClient(API_KEY)
 
 # Stock you're trading
@@ -216,3 +216,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
